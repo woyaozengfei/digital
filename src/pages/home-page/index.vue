@@ -14,6 +14,7 @@ export default {
 
 <style>
 .container {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 10px;
@@ -21,10 +22,13 @@ export default {
 }
 .header {
   width: 100%;
-  height: 100px;
+  height: 1000px;
 }
 .footer {
   position: relative;
-  background-color: black;
+  left:100px;
+  bottom: 10px;
+  background-color: rgb(255, 239, 187);
+  max-width: 1280px;
 }
 </style>
