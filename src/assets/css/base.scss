@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*css 初始化 */
+body { overflow: hidden }
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0;outline-style: none }
+/* select, input { vertical-align:middle;} */
+/* select, input, textarea { font-size:12px; margin:0; } */
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% 'PingFangSC-Regular',Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+a {color:inherit;text-decoration:none;}
+.clearfix:before,.clearfix:after {  /*清除浮动*/
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px
+}
+
+::-webkit-scrollbar-button {
+    display: none
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #dddee1;
+  &:hover {
+    background-color: #d6dad7;
+  }
+  // &:horizontal {
+  // }
+}
+
+// ::-webkit-resizer,::-webkit-scrollbar-corner {
+//     display: none
+// }
+// ::-webkit-scrollbar { width: 12px;}
+// /* 滚动槽 */
+// ::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//   border-radius: 10px;
+// }
+// /* 滚动条滑块 */
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 10px;
+//   background: rgba(0,0,0,0.1);
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+// }
+// ::-webkit-scrollbar-thumb:window-inactive {
+//   background: rgba(255,0,0,0.4);
+// }
