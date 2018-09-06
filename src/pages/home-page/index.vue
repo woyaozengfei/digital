@@ -7,17 +7,16 @@
         </a>
       </div>
       <div class="header_right">
+        <span v-if="isShowLogin" class="header_right-text" @click="showModal">请登录</span>
         <div class="header_right-logo">
-          <el-dropdown>
-            <i class="el-icon-news icon-style"></i>
-            <el-dropdown-menu>
-              <el-dropdown-item>黄金糕</el-dropdown-item>
-              <el-dropdown-item>狮子头</el-dropdown-item>
-              <el-dropdown-item>螺蛳粉</el-dropdown-item>
-              <el-dropdown-item>双皮奶</el-dropdown-item>
-              <el-dropdown-item>蚵仔煎</el-dropdown-item>
+          <!-- <el-dropdown size="mini" placement="bottom-start">
+            <i v-if="isShowLogo" class="el-icon-news icon-style"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>我的订单</el-dropdown-item>
+              <el-dropdown-item>商品管理</el-dropdown-item>
             </el-dropdown-menu>
-          </el-dropdown>
+          </el-dropdown> -->
           <i class="el-icon-message icon-style" @mouseover="showMessage"></i>
         </div>
       </div>
@@ -25,22 +24,38 @@
     <div class="content">
     </div>
     <div class="footer">我是footer</div>
+    <modal :mdShow="isShowModal" @close="closeModal">
+      <span>123</span>
+    </modal>
   </div>
 </template>
 
 <script>
+import Modal from 'components/model'
 export default {
+  components: {
+    Modal
+  },
   data () {
     return {
-      inputdata: ''
+      isShowLogo: false,
+      isShowLogin: true,
+      inputdata: '',
+      isShowModal: false
     }
   },
   methods: {
-    showPerson () {
-      console.log(1)
+    // showPerson () {
+    //   console.log(1)
+    // },
+    // showMessage () {
+    //   console.log(2)
+    // },
+    closeModal () {
+      this.isShowModal = false
     },
-    showMessage () {
-      console.log(2)
+    showModal () {
+      this.isShowModal = true
     }
   }
 }
@@ -66,6 +81,14 @@ export default {
   font-style: normal;
   justify-content:flex-end;
 }
+.header_right-text {
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  line-height: 60px;
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
 .content{
   width: 100%;
 }
@@ -75,7 +98,8 @@ export default {
   max-width: 1280px;
 }
 .icon-style{
-  margin-left: 10px;
+  font-size: 30px;
+  margin-left: 15px;
   margin-top: 10px;
 }
 </style>
