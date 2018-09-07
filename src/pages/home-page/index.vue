@@ -17,15 +17,14 @@
               <el-dropdown-item>商品管理</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown> -->
-          <i class="el-icon-message icon-style" @mouseover="showMessage"></i>
+          <i class="el-icon-message icon-style" @click="showMessage"></i>
         </div>
       </div>
     </div>
     <div class="content">
     </div>
     <div class="footer">我是footer</div>
-    <modal :mdShow="isShowModal" @close="closeModal">
-      <span>123</span>
+    <modal v-model="isShowModal" @close="closeModal">
     </modal>
   </div>
 </template>
@@ -48,9 +47,9 @@ export default {
     // showPerson () {
     //   console.log(1)
     // },
-    // showMessage () {
-    //   console.log(2)
-    // },
+    showMessage () {
+      this.isShowModal = true
+    },
     closeModal () {
       this.isShowModal = false
     },
